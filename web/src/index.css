@@ -1,0 +1,328 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/Montserrat-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/Montserrat-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-family: "Montserrat";
+  line-height: 1.5;
+  font-weight: normal;
+  font-style: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] {
+  --bg-50: rgba(0, 0, 0, 0.5);
+  --bg-000: #000000;
+  --primary-100: #4c1568;
+  --primary-200: #7c419a;
+  --primary-300: #9b77ad;
+  --accent-100: #1f1f1f;
+  --accent-200: #212121;
+  --text-100: #ffffff;
+  --text-200: #777777;
+  --bg-100: #000000;
+  --bg-200: #161616;
+  --bg-300: #2c2c2c;
+
+  --error: #ff0000;
+  --gradient-80: linear-gradient(
+    170deg,
+    var(--accent-100),
+    var(--bg-000),
+    var(--bg-100),
+    var(--bg-000),
+    var(--accent-100)
+  );
+  --gradient-100: linear-gradient(
+    170deg,
+    var(--bg-000),
+    var(--accent-100),
+    var(--bg-000)
+  );
+  --gradient-200: linear-gradient(
+    170deg,
+    var(--accent-100),
+    var(--accent-200),
+    var(--accent-100)
+  );
+}
+
+[data-theme="dark-zen"] {
+  --bg-50: rgba(0, 0, 0, 0.5);
+  --bg-000: #000000;
+  --bg-100: #070c14;
+  --bg-200: #0f1c2e;
+  --bg-300: #1f2b3e;
+  --bg-300: #374357;
+  --text-100: #ffffff;
+  --text-200: #e0e0e0;
+  --primary-100: #0085ff;
+  --primary-200: #69b4ff;
+  --primary-300: #e0ffff;
+  --accent-100: #3d5a80;
+  --accent-200: #cee8ff;
+  --error: #ff0000;
+  --success: #22ba00;
+  --shadow-000: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --gradient-80: linear-gradient(
+    170deg,
+    var(--bg-000),
+    var(--bg-100),
+    var(--bg-100),
+    var(--bg-200),
+    var(--bg-000)
+  );
+  --gradient-100: linear-gradient(
+    170deg,
+    var(--bg-000),
+    var(--bg-100),
+    var(--bg-000)
+  );
+  --gradient-200: linear-gradient(
+    170deg,
+    var(--bg-200),
+    var(--bg-200),
+    var(--bg-200)
+  );
+}
+
+[data-variant="BUBBLE"] {
+  --border: 1px solid var(--bg-300);
+  --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  --squared-radius: 4px;
+  --small-radius: 8px;
+  --card-radius: 12px;
+  --tag-radius: 50px;
+  --background-view: var(--bg-100);
+  --background-card: var(--bg-200);
+}
+
+/* custom scrollbar */
+
+*::-webkit-scrollbar-track {
+  background-color: var(--bg-100); /*color de la barra de fondo*/
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-100); /*color del manejador*/
+  border-radius: 30px;
+  cursor: pointer;
+}
+*::-webkit-scrollbar {
+  width: 6px; /*ancho del scroll vertical*/
+  height: 5px; /*alto del scroll horizontal*/
+}
+
+h1 {
+  color: var(--text-100);
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+  text-align: start;
+}
+
+a {
+  font-weight: 500;
+  color: var(--text-100);
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--gradient-100);
+  color: var(--text-100);
+}
+
+input {
+  color: var(--text-100) !important;
+  box-sizing: border-box;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  transition: border-color 0.25s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--text-200) !important;
+  caret-color: var(--text-200) !important;
+}
+
+button {
+  background-color: transparent;
+  color: var(--text-100);
+  box-sizing: border-box;
+  border: none;
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
+button:disabled {
+  background-color: var(--background-card);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.truncate {
+  @media (max-width: 490px) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.header img {
+  width: 40px;
+  height: 40px;
+}
+
+.view {
+  background-color: var(--background-view);
+}
+
+.list {
+  background-color: var(--background-view);
+}
+
+.navbar {
+  background-color: var(--bg-200);
+}
+
+.areaTransparent {
+  background-color: var(--background-card-transparent);
+}
+
+.selectableTag {
+  border-radius: var(--card-radius);
+}
+
+.selectableCard {
+  border-radius: var(--card-radius);
+}
+
+.card {
+  background-color: var(--background-card);
+  border: var(--border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+}
+
+.cardTransparent {
+  background-color: var(--background-card-transparent);
+  border: var(--border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+}
+
+.secondaryCard {
+  background-color: var(--background-view);
+  border: var(--border);
+  border-radius: var(--card-radius);
+}
+
+.elevatedCard {
+  background-color: var(--bg-200);
+  border: var(--border);
+  border-radius: var(--card-radius);
+}
+
+.media {
+  border: var(--border);
+  border-radius: var(--card-radius);
+}
+
+.input {
+  background-color: var(--bg-200);
+  border: var(--border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  color: var(--text-100);
+}
+
+.tag {
+  background-color: var(--bg-200);
+  border-radius: var(--tag-radius);
+}
+
+.primaryButton {
+  padding: 6px;
+  background-color: var(--primary-100);
+  color: var(--text-100);
+  border-radius: var(--small-radius);
+}
+
+.secondaryButton {
+  background-color: var(--bg-200);
+  border-radius: var(--tag-radius);
+}
+
+.secondaryText {
+  color: var(--text-200);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show-element {
+  animation: slideUp 0.2s ease-out;
+}
