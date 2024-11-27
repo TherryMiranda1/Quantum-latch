@@ -5,7 +5,7 @@ import {
 import { environment } from "../../environment.ts";
 import { createAppAuth } from "npm:@octokit/auth-app";
 
-import { Octokit } from "npm:@octokit/core";
+// import { Octokit } from "npm:@octokit/core";
 
 const oauth2Client = new OAuth2Client({
   clientId: environment.GITHUB_CLIENT_ID || "",
@@ -19,10 +19,10 @@ const oauth2Client = new OAuth2Client({
 });
 
 const auth = createAppAuth({
-  appId: environment.GITHUB_APP_ID || "",
-  privateKey: environment.GITHUB_APP_SECRET_KEY || "",
-  clientId: environment.GITHUB_CLIENT_ID || "",
-  clientSecret: environment.GITHUB_CLIENT_SECRET || "",
+  appId: environment.GITHUB_APP_ID || "-",
+  privateKey: environment.GITHUB_APP_SECRET_KEY || "-",
+  clientId: environment.GITHUB_CLIENT_ID || "-",
+  clientSecret: environment.GITHUB_CLIENT_SECRET || "-",
 });
 
 const getCode = async () => {
