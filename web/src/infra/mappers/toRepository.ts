@@ -7,5 +7,6 @@ export const toRepository = (repository: any): Repository => {
     description: repository.description,
     url: repository.html_url,
     isPublic: !repository.private,
+    ownerId: "-",
   };
 };
