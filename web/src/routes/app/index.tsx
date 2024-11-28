@@ -1,3 +1,4 @@
+import { View } from "@/components";
 import { getIsMember } from "@/utils/localStorage/getIsMember";
 import { Checkout } from "@/Views/Checkout";
 import { redirect } from "@tanstack/react-router";
@@ -17,5 +18,9 @@ export const Route = createFileRoute("/app/")({
       });
     }
   },
-  component: () => <Checkout />,
+  component: () => (
+    <View applyMaxWidth={false}>
+      <Checkout />
+    </View>
+  ),
 });

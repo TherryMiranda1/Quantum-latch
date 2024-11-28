@@ -99,13 +99,14 @@ const LatchModalContent = styled.div`
 const CheckoutStyled = styled.section`
   width: 100%;
   max-width: ${DEVICE_BREAKPOINTS.md};
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   box-sizing: border-box;
   gap: 8px;
   padding: 16px;
-  background-color: var(--bg-000);
+
   div {
     display: flex;
     align-items: center;
