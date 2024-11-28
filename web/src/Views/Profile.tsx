@@ -20,7 +20,7 @@ export const ProfileView = () => {
         <UserCardStyled>
           <Header text="Mi perfil" />
           {currentUser.name && <Text text={` ${currentUser.name}`} />}
-          <Text text={` ${currentUser.email}`} />
+          {currentUser.email && <Text text={` ${currentUser.email}`} />}
           <Text text={` ${currentUser.role}`} />
           <Button
             onClick={() => {

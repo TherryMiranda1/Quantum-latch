@@ -37,10 +37,12 @@ export const authWithGithubCallbackController = async (c: Context) => {
     const tokens = await githubService.getTokens(c.req.url, codeVerifier);
 
     const userInfo = await githubService.getUserInfo(tokens);
+
     const user = await findOrCreateUser(
       c,
       {
         ...userInfo,
+        githubId: userInfo.id,
         accessToken: tokens.accessToken,
         refreshToken: tokens.refreshToken,
         tokenType: tokens.tokenType,
@@ -74,13 +76,7 @@ export const appGithubCallbackController = async (c: Context) => {
       );
     }
 
-    const tokens = await githubService.getInstallationToken(installationId);
-    console.log(tokens);
-
-    // const installations = await githubService.listInstallations(
-    //   installationId,
-    //   tokens.token
-    // );
+    await githubService.getInstallationToken(installationId);
 
     return c.redirect(`${environment.FRONTEND_ORIGIN}`);
   } catch (error) {

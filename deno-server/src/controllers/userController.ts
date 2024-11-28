@@ -143,6 +143,7 @@ export const getMyUserInfo = async (c: Context) => {
       profileUrl: user.profileUrl,
       bio: user.bio,
       profileImage: user.profileImage,
+      isPaired: user.isPaired,
       provider: user.provider,
     };
     return c.json(mappedUser, 200);

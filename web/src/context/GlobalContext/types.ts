@@ -50,7 +50,6 @@ export interface RepositoriesOptions {
     call: (options?: any) => void;
     callWithReturn: (options?: any) => Promise<any>;
   };
-  addRepository: (repository: Repository) => void;
 }
 
 export interface UIOptions {

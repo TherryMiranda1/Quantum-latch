@@ -12,6 +12,7 @@ export interface User {
     email: string;
     role: string;
     name?: string;
+    isPaired?:boolean;
     profileImage?: string;
     createdAt?: Date;
     updatedAt?: Date;

@@ -24,6 +24,11 @@ const EMAIL_ADDRESS = Deno.env.get("EMAIL_ADDRESS");
 const EMAIL_PASSWORD = Deno.env.get("EMAIL_PASSWORD");
 const EMAIL_SERVICE_URL = Deno.env.get("EMAIL_SERVICE_URL");
 
+const LATCH_APP_ID = Deno.env.get("LATCH_APP_ID");
+const LATCH_SECRET_KEY = Deno.env.get("LATCH_SECRET_KEY");
+const LATCH_OPERATION_ID = Deno.env.get("LATCH_OPERATION_ID");
+const LATCH_MY_ACCOUNT_ID = Deno.env.get("LATCH_MY_ACCOUNT_ID");
+
 export const environment = {
   MONGODB_URI,
   GOOGLE_CLIENT_ID,
@@ -44,4 +49,8 @@ export const environment = {
   EMAIL_ADDRESS,
   EMAIL_PASSWORD,
   EMAIL_SERVICE_URL,
+  LATCH_APP_ID,
+  LATCH_SECRET_KEY,
+  LATCH_OPERATION_ID,
+  LATCH_MY_ACCOUNT_ID,
 };

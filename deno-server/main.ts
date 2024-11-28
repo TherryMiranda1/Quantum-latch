@@ -10,6 +10,8 @@ import { authMiddleware } from "./src/middleware/authMiddleware.ts";
 import feedbackRoutes from "./src/routes/feedbackRoutes.ts";
 
 import repositoryRoutes from "./src/routes/repositoriesRoutes.ts";
+import webhookRoutes from "./src/routes/webhook.ts";
+import latchRoutes from "./src/routes/latchRoutes.ts";
 
 const app = new Hono<AppContext>();
 
@@ -37,11 +39,15 @@ app.use("/api/me/*", authMiddleware);
 app.use("/api/feedbacks/*", authMiddleware);
 app.use("/api/repositories/*", authMiddleware);
 app.use("/api/user-repositories/*", authMiddleware);
+app.use("/api/latch-pair", authMiddleware);
+app.use("/api/latch-status", authMiddleware);
 
 app.route("/api", userRoutes);
 app.route("/api", assetRoutes);
 app.route("/api", feedbackRoutes);
 app.route("/api", repositoryRoutes);
+app.route("/api", webhookRoutes);
+app.route("/api", latchRoutes);
 
 // Manejo de rutas no encontradas
 app.notFound((c) => c.json({ error: "Not Found" }, 404));

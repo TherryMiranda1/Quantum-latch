@@ -23,6 +23,9 @@ export interface IUser {
   email: string;
   password: string;
   role: string;
+  isPaired?: boolean;
+  githubId?: string;
+  latchAccountId?: string;
   accessToken?: string;
   refreshToken?: string;
   tokenType?: string;

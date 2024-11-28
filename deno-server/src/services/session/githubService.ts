@@ -80,6 +80,8 @@ const getInstallationToken = async (installationId: string) => {
   return responseJson;
 };
 
+
+
 const listInstallations = async (installationId: string, token: string) => {
   const installationAuthentication = await auth({
     type: "app",
@@ -102,6 +104,10 @@ const listInstallations = async (installationId: string, token: string) => {
   return responseJson;
 };
 
+const handlePullRequestWebhook =()=>{
+
+}
+
 export const githubService = {
   getCode,
   getTokens,
@@ -109,4 +115,5 @@ export const githubService = {
   getUserRepositories,
   getInstallationToken,
   listInstallations,
+  handlePullRequestWebhook,
 };

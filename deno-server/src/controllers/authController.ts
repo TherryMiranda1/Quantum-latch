@@ -117,6 +117,7 @@ export const findOrCreateUser = async (
         {
           $set: {
             updatedAt: new Date(),
+            githubId: userData.githubId,
             accessToken: userData.accessToken,
             refreshToken: userData.refreshToken,
           },

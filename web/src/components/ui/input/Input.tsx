@@ -2,18 +2,11 @@ import { ComponentProps } from "react";
 import styled from "styled-components";
 
 type Props = ComponentProps<"input"> & {
-  onChange?: (value: string) => void;
   isTextarea?: boolean;
 };
 
 export const Input = ({ ...props }: Props) => {
-  return (
-    <InputStyled
-      className="input"
-      {...props}
-      onChange={(e) => props.onChange?.(e.target.value)}
-    />
-  );
+  return <InputStyled className="input" {...props} />;
 };
 
 const InputStyled = styled.input`
